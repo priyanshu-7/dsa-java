@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.regex.*;
 
 public class String
-{	
+{
 	boolean anagramCheck(String s1, String s2)
 	{
 		if(s1.length()!=s2.length())
@@ -22,7 +22,7 @@ public class String
 			{
 				map1.put(ch, map1.get(ch)+1);
 			}
-			else 
+			else
 			{
 				map1.put(ch, 1);
 			}
@@ -35,14 +35,14 @@ public class String
 			{
 				map2.put(ch, map2.get(ch)+1);
 			}
-			else 
+			else
 			{
 				map2.put(ch, 1);
 			}
 		}
 		return map1.equals(map2); //two maps are equal if all the keys/value pairs are same.
 	}
-	
+
 	//check which is the first repeating character
 	void firstRepeatingCharacter(String s)
 	{
@@ -114,32 +114,32 @@ public class String
 			}
 		}
 	}
-	
+
 	//check if str1 can be achieved by rotating str2 to two places (GFG solution)
-	static boolean isRotated(String str1, String str2) 
-    { 
-        if (str1.length() != str2.length()) 
-            return false; 
-       
-        String clock_rot = ""; 
-        String anticlock_rot = ""; 
-        int len = str2.length(); 
-       
-        // Initialize string as anti-clockwise rotation 
-        anticlock_rot = anticlock_rot + 
-                        str2.substring(len-2, len) + 
-                        str2.substring(0, len-2) ; 
-       
-        // Initialize string as clock wise rotation 
-        clock_rot = clock_rot + 
-                    str2.substring(2) + 
-                    str2.substring(0, 2) ; 
-       
-        // check if any of them is equal to string1 
-        return (str1.equals(clock_rot) || 
-                str1.equals(anticlock_rot)); 
-    } 
-	
+	static boolean isRotated(String str1, String str2)
+    {
+        if (str1.length() != str2.length())
+            return false;
+
+        String clock_rot = "";
+        String anticlock_rot = "";
+        int len = str2.length();
+
+        // Initialize string as anti-clockwise rotation
+        anticlock_rot = anticlock_rot +
+                        str2.substring(len-2, len) +
+                        str2.substring(0, len-2) ;
+
+        // Initialize string as clock wise rotation
+        clock_rot = clock_rot +
+                    str2.substring(2) +
+                    str2.substring(0, 2) ;
+
+        // check if any of them is equal to string1
+        return (str1.equals(clock_rot) ||
+                str1.equals(anticlock_rot));
+    }
+
 	//check if a string contains an anagram eg -> froggy, frog -> forg is an anagram of frog.
 	boolean isAnagramReverse(String txt, String pat)
 	{
@@ -166,7 +166,7 @@ public class String
 	//reverse words in a string
 	String reverseWordsInAString(String s)
 	{
-		String answer = ""; 
+		String answer = "";
 		String test[] = s.split(" ");
 		for(int i = 0; i<test.length; i++)
 		{
@@ -181,40 +181,40 @@ public class String
 	}
 	void regex(String s)
 	{
-		System.out.println(Pattern.matches(".s", "as"));//true (2nd char is s)  
-		System.out.println(Pattern.matches(".s", "mk"));//false (2nd char is not s)  
-		System.out.println(Pattern.matches(".s", "mst"));//false (has more than 2 char)  
-		System.out.println(Pattern.matches(".s", "amms"));//false (has more than 2 char)  
-		System.out.println(Pattern.matches("..s", "mas"));//true (3rd char is s)  
-		System.out.println(Pattern.matches("[amn]", "abcd"));//false (not a or m or n)  
-		System.out.println(Pattern.matches("[amn]", "a"));//true (among a or m or n)  
-		System.out.println(Pattern.matches("[amn]", "ammmna"));//false (m and a comes more than once) 
-		System.out.println("metacharacters d....");//d means digit  
-		System.out.println(Pattern.matches("\\d", "abc"));//false (non-digit)  
-		System.out.println(Pattern.matches("\\d", "1"));//true (digit and comes once)  
-		System.out.println(Pattern.matches("\\d", "4443"));//false (digit but comes more than once)  
-		System.out.println(Pattern.matches("\\d", "323abc"));//false (digit and char)  
-		System.out.println("metacharacters D...."); //D means non-digit  
-		System.out.println(Pattern.matches("\\D", "abc"));//false (non-digit but comes more than once)  
-		System.out.println(Pattern.matches("\\D", "1"));//false (digit)  
-		System.out.println(Pattern.matches("\\D", "4443"));//false (digit)  
-		System.out.println(Pattern.matches("\\D", "323abc"));//false (digit and char)  
-		System.out.println(Pattern.matches("\\D", "m"));//true (non-digit and comes once)  
-		System.out.println("metacharacters D with quantifier....");  
-		System.out.println(Pattern.matches("\\D*", "mak"));//true (non-digit and may come 0 or more times)  
-		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "arun32"));//true  
-		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "kkvarun32"));//false (more than 6 char)  
-		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "JA2Uk2"));//true  
-		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "arun$2"));//false ($ is not matched)  
+		System.out.println(Pattern.matches(".s", "as"));//true (2nd char is s)
+		System.out.println(Pattern.matches(".s", "mk"));//false (2nd char is not s)
+		System.out.println(Pattern.matches(".s", "mst"));//false (has more than 2 char)
+		System.out.println(Pattern.matches(".s", "amms"));//false (has more than 2 char)
+		System.out.println(Pattern.matches("..s", "mas"));//true (3rd char is s)
+		System.out.println(Pattern.matches("[amn]", "abcd"));//false (not a or m or n)
+		System.out.println(Pattern.matches("[amn]", "a"));//true (among a or m or n)
+		System.out.println(Pattern.matches("[amn]", "ammmna"));//false (m and a comes more than once)
+		System.out.println("metacharacters d....");//d means digit
+		System.out.println(Pattern.matches("\\d", "abc"));//false (non-digit)
+		System.out.println(Pattern.matches("\\d", "1"));//true (digit and comes once)
+		System.out.println(Pattern.matches("\\d", "4443"));//false (digit but comes more than once)
+		System.out.println(Pattern.matches("\\d", "323abc"));//false (digit and char)
+		System.out.println("metacharacters D...."); //D means non-digit
+		System.out.println(Pattern.matches("\\D", "abc"));//false (non-digit but comes more than once)
+		System.out.println(Pattern.matches("\\D", "1"));//false (digit)
+		System.out.println(Pattern.matches("\\D", "4443"));//false (digit)
+		System.out.println(Pattern.matches("\\D", "323abc"));//false (digit and char)
+		System.out.println(Pattern.matches("\\D", "m"));//true (non-digit and comes once)
+		System.out.println("metacharacters D with quantifier....");
+		System.out.println(Pattern.matches("\\D*", "mak"));//true (non-digit and may come 0 or more times)
+		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "arun32"));//true
+		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "kkvarun32"));//false (more than 6 char)
+		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "JA2Uk2"));//true
+		System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "arun$2"));//false ($ is not matched)
 		//starts with 7, 8 or 9 then remaining 9 chars are b/w 0 to 9
-		System.out.println(Pattern.matches("[789]{1}[0-9]{9}", "9953038949"));//true  
-		System.out.println(Pattern.matches("[789][0-9]{9}", "9953038949"));//true  
-		System.out.println(Pattern.matches("[789][0-9]{9}", "99530389490"));//false (11 characters)  
-		System.out.println(Pattern.matches("[789][0-9]{9}", "6953038949"));//false (starts from 6)  
-		System.out.println(Pattern.matches("[789][0-9]{9}", "8853038949"));//true  
-		System.out.println("by metacharacters ...");  
-		System.out.println(Pattern.matches("[789]{1}\\d{9}", "8853038949"));//true  
-		System.out.println(Pattern.matches("[789]{1}\\d{9}", "3853038949"));//false (starts from 3)  
+		System.out.println(Pattern.matches("[789]{1}[0-9]{9}", "9953038949"));//true
+		System.out.println(Pattern.matches("[789][0-9]{9}", "9953038949"));//true
+		System.out.println(Pattern.matches("[789][0-9]{9}", "99530389490"));//false (11 characters)
+		System.out.println(Pattern.matches("[789][0-9]{9}", "6953038949"));//false (starts from 6)
+		System.out.println(Pattern.matches("[789][0-9]{9}", "8853038949"));//true
+		System.out.println("by metacharacters ...");
+		System.out.println(Pattern.matches("[789]{1}\\d{9}", "8853038949"));//true
+		System.out.println(Pattern.matches("[789]{1}\\d{9}", "3853038949"));//false (starts from 3)
 		System.out.println(s.replaceAll("\\D", "")); //remove all non digits
 		System.out.println(s.replaceAll("\\d", "")); //remove all digits
 		System.out.println(s.replaceAll("[^a-zA-Z]+", "")); //remove all non digits (including special chars)
@@ -233,8 +233,8 @@ public class String
 		}
 		return sum;
 	}
-	
-	
+
+
 	//pangram check (a string which contains all a-z alphabets)
 	public static boolean checkPangram  (String s)
    	 {
@@ -272,7 +272,7 @@ public class String
                 {
                     break;
                 }
-                else 
+                else
                 {
 	                visited[str.charAt(j)] = true;
 	                result = Math.max(result, j-i+1);
@@ -283,7 +283,7 @@ public class String
     }
 	//remove common chars from two strings and concat
 	String removeCommonChars(String s1,String s2){
-        
+
         HashSet<Character> set = new HashSet<>();
         for(int i = 0; i<s1.length(); i++)
         {
@@ -294,7 +294,7 @@ public class String
             if(set.contains(s2.charAt(i)))
             {
                 char ch = s2.charAt(i);
-                s1 = s1.replace(ch, '\0'); 
+                s1 = s1.replace(ch, '\0');
                 s2 = s2.replace(ch, '\0');
             }
         }
@@ -303,6 +303,6 @@ public class String
 }
 	public static void main(String args[])
 	{
-		Flat f = new Flat();
+
 	}
 }

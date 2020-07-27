@@ -18,7 +18,7 @@ public class LinkedList{
 			{
 				head = node;
 			}
-			else 
+			else
 			{
 				Node n = head;
 				while(n.next!=null)
@@ -34,7 +34,7 @@ public class LinkedList{
 			{
 				head1 = node;
 			}
-			else 
+			else
 			{
 				Node n = head1;
 				while(n.next!=null)
@@ -50,7 +50,7 @@ public class LinkedList{
 			{
 				head2 = node;
 			}
-			else 
+			else
 			{
 				Node n = head2;
 				while(n.next!=null)
@@ -68,7 +68,7 @@ public class LinkedList{
 		{
 			node = head;
 		}
-		else 
+		else
 		{
 			node = head1;
 		}
@@ -85,7 +85,7 @@ public class LinkedList{
 		Node node = null;
 		if(ll==1)
 		{node = head;}
-		else 
+		else
 		{node = head1;}
 		while(node.next!=null)
 		{
@@ -150,7 +150,7 @@ public class LinkedList{
 		head = kthPlusOne;
 		kthNode.next = null;
 	}
-	
+
 	public int getIntersectionNode()
 	{
 		int c1 = countNodes(1); //number of nodes in 1st ll
@@ -187,7 +187,7 @@ public class LinkedList{
 		}
 		return -1;
 	}
-	
+
 	public Node reverseInGroups(Node head, int k)
 	{
 		Node next = null;
@@ -239,11 +239,11 @@ public class LinkedList{
 			}
 		}
 		/* Loop detection algo end */
-		
-		
+
+
 		/* Find start point of loop */
 		Node loopStartsAt = null;
-		//iterate slowPtr (which is now at start) and fastPtr (fixed where loop was detected) 
+		//iterate slowPtr (which is now at start) and fastPtr (fixed where loop was detected)
 		while(1==1)
 		{
 			slowPtr = slowPtr.next;
@@ -254,10 +254,10 @@ public class LinkedList{
 				break;
 			}
 		}
-		
+
 		/* Find end point of loop */
 		Node endPointOfLoop = null;
-		while(fastPtr.next!=slowPtr) 
+		while(fastPtr.next!=slowPtr)
 		{
 			fastPtr = fastPtr.next;
 		}
@@ -310,7 +310,7 @@ public class LinkedList{
 		{
 			return true;
 		}
-		else 
+		else
 		{
 			return false;
 		}
@@ -324,7 +324,7 @@ public class LinkedList{
 		{
 			head = node;
 		}
-		else 
+		else
 		{
 			Node current = head;
 			while(current.next!=null)
@@ -342,7 +342,7 @@ public class LinkedList{
 	{
 		Node node = new Node();
 		node.data = data;
-		node.next = head; 
+		node.next = head;
 		head = node;
 	}
 	public void pop()
@@ -398,18 +398,6 @@ public class LinkedList{
 	}
 	public static void main(String args[])
 	{
-		Base base = new Base();
-		base.insert(1,1);
-		base.insert(2,1);
-		base.insert(3,1);
-		base.insert(4,1);
-		base.insert(5,1);
-		base.insert(9, 2);
-		base.insert(6, 2);
-		base.insert(3, 2);
-		base.head = base.reverseList(base.head); 
-		base.show(1);
-		base.head1 = base.reverseList(base.head1);
-		base.addLists();
+
 	}
 }

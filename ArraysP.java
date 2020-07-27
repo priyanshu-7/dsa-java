@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 
 public class ArraysP
-{	
+{
 	//Left rotate by d elements.
 	void leftRotate(int[] arr, int n, int d)
 	{
@@ -84,15 +84,15 @@ public class ArraysP
 			{
 				sum += diff;
 			}
-				
+
 		}
 		System.out.println(sum);
 	}
-	
+
 	void current_leader(int[] arr)
 	{
 		//Current leader (elements on the right are always greater), last element is always leader
-		int curr_leader = arr[arr.length-1]; 
+		int curr_leader = arr[arr.length-1];
 		System.out.println(curr_leader);
 		for(int i = arr.length-2; i>=0; i--)
 		{
@@ -103,7 +103,7 @@ public class ArraysP
 			}
 		}
 	}
-	
+
 	int maxConsecutiveOnes(int[] arr)
 	{
 		int max = 0;
@@ -117,7 +117,7 @@ public class ArraysP
 					{
 						count++;
 					}
-					else 
+					else
 					{
 						break;
 					}
@@ -127,7 +127,7 @@ public class ArraysP
 		}
 		return max;
 	}
-	
+
 	int kadaneAlgo(int[] arr) //maximum sum subarry (contiguous)
 	{
 		int res = arr[0];
@@ -152,7 +152,7 @@ public class ArraysP
 					{
 						current+=1;
 					}
-					else 
+					else
 					{
 						break;
 					}
@@ -175,9 +175,9 @@ public class ArraysP
 			}
 			else if(mid == 0 || arr[mid-1]!=arr[mid])
 			{
-				return arr.length-mid; //return total count of 1 (length of array - index of first occurrence of 1) 
+				return arr.length-mid; //return total count of 1 (length of array - index of first occurrence of 1)
 			}
-			else 
+			else
 			{
 				stop = mid-1;
 			}
@@ -202,7 +202,7 @@ public class ArraysP
 			{
 				end = mid-1;
 			}
-			//check in the right part of the array 
+			//check in the right part of the array
 			else
 			{
 				start = mid+1;
@@ -260,9 +260,9 @@ public class ArraysP
 			set.add(num);
 		}
 		System.out.println(set);
-			
+
 	}
-	
+
 	//o(m+n) solution
 	int[] mergeSortedArrays(int arr1[], int arr2[])
 	{
@@ -296,7 +296,7 @@ public class ArraysP
 		}
 		return arr3;
 	}
-	//logic: x-arr[i] = sum (x-arr[i] = remaining pair sum), so if that pair is found then we have the triplet. 
+	//logic: x-arr[i] = sum (x-arr[i] = remaining pair sum), so if that pair is found then we have the triplet.
 	boolean findTriplet(int arr[], int x)
 	{
 		for(int i = 0; i<arr.length-1; i++)
@@ -323,13 +323,13 @@ public class ArraysP
 			//left half is sorted
 			if(arr[start]<arr[mid])
 			{
-				
+
 				//if x lies in the current range
 				if(x>=arr[start] && x<arr[mid])
 				{
 					end = mid-1; //check in the left side of the array
 				}
-				else 
+				else
 				{
 					start = mid+1; //else move to the right side of the array
 				}
@@ -342,12 +342,12 @@ public class ArraysP
 				{
 					start = mid+1;
 				}
-				else 
+				else
 				{
 					end = mid-1;
 				}
 			}
-			
+
 		}
 		return false;
 	}
@@ -400,44 +400,44 @@ public class ArraysP
 		int series[] = new int[m];
 		series[n-1] = 1;
 		//add last M terms and add a new element to array
-		for (int i = n; i < m; i++) 
-            for (int j = i - n; j < i; j++) 
-            	series[i] += series[j]; 
+		for (int i = n; i < m; i++)
+            for (int j = i - n; j < i; j++)
+            	series[i] += series[j];
 		for(int num:series)
 		{
 			System.out.println(num);
 		}
 	}
-	
-	//check if array contains a subarry with sum = x
-	int subArraySum(int arr[], int n, int sum) 
-	{ 
-		int curr_sum = arr[0], start = 0; 
 
-		// Pick a starting point 
-		for (int i = 1; i <= n; i++) 
-		{ 
-			// If curr_sum exceeds the sum, then remove the starting elements 
-			while (curr_sum > sum && start < i-1) 
-			{ 
-				curr_sum = curr_sum - arr[start]; 
-				start++; 
-			} 
-			// If curr_sum becomes equal to sum, then return true 
-			if (curr_sum == sum) 
-			{ 
-				int p = i-1; 
-				System.out.println("Sum found between indexes " + start 
-						+ " and " + p); 
-				return 1; 
-			} 
-			// Add this element to curr_sum 
-			if (i < n) 
-			curr_sum = curr_sum + arr[i]; 
-		} 
-		System.out.println("No subarray found"); 
-		return 0; 
-	} 
+	//check if array contains a subarry with sum = x
+	int subArraySum(int arr[], int n, int sum)
+	{
+		int curr_sum = arr[0], start = 0;
+
+		// Pick a starting point
+		for (int i = 1; i <= n; i++)
+		{
+			// If curr_sum exceeds the sum, then remove the starting elements
+			while (curr_sum > sum && start < i-1)
+			{
+				curr_sum = curr_sum - arr[start];
+				start++;
+			}
+			// If curr_sum becomes equal to sum, then return true
+			if (curr_sum == sum)
+			{
+				int p = i-1;
+				System.out.println("Sum found between indexes " + start
+						+ " and " + p);
+				return 1;
+			}
+			// Add this element to curr_sum
+			if (i < n)
+			curr_sum = curr_sum + arr[i];
+		}
+		System.out.println("No subarray found");
+		return 0;
+	}
 	int lomutoPartition(int arr[])
 	{
 		int l, h, pivot;
@@ -475,23 +475,23 @@ public class ArraysP
 			{
 				r = p-1;
 			}
-			else 
+			else
 			{
 				l = p+1;
 			}
 		}
 		return -1;
 	}
-	
+
 	//print snake pattern in matrix
 	void snakePattern()
 	{
         int arr[][] = {
                         {1, 2, 3},
-                       {4, 5, 6}, 
+                       {4, 5, 6},
                        {7, 8, 9},
                        {10, 11, 12}
-        }; 
+        };
         for(int i = 0; i<arr.length; i++) //access rows [use arr.length]
         {
             if(i == 0 || i%2==0) //for 0th and even rows
@@ -572,7 +572,7 @@ public class ArraysP
                         {15, 25, 35, 45},
                         {27, 29, 37, 48},
                         {32, 33, 39, 50}};
-        
+
         int k = 29;
         int rows = 4;
         int columns = 4;
@@ -589,7 +589,7 @@ public class ArraysP
             {
                 i++;
             }
-            else 
+            else
             {
                 j--;
             }
@@ -606,7 +606,7 @@ public class ArraysP
 				curr++;
 				max = Math.max(curr, max);
 			}
-			else 
+			else
 			{
 				curr = 1;
 			}
@@ -615,8 +615,6 @@ public class ArraysP
 	}
 	public static void main(String args[])
 	{
-		Flat f = new Flat();
-		/*
-		*/
+
 	}
 }
