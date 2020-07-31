@@ -4,6 +4,23 @@ import java.util.LinkedHashSet;
 
 public class ArraysP
 {
+	//for every element print the ceiling on its left
+	void printCeil(int[] arr)
+	{
+	TreeSet<Integer> set = new TreeSet<>();
+        for(int num:arr)
+        {
+            if(set.ceiling(num)!=null)
+            {
+                System.out.println(set.ceiling(num));
+            }
+            else 
+            {
+                System.out.println(-1);
+            }
+            set.add(num);
+        }
+	}
 	//Left rotate by d elements.
 	void leftRotate(int[] arr, int n, int d)
 	{
