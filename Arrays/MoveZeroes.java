@@ -1,5 +1,5 @@
 import java.util.*;
-class HelloWorld {
+class MoveZeroes {
     /*
     Count number of non zero elements, whenever non zero element 
     is found, swap it with the element at arr[count]

@@ -1,5 +1,5 @@
 import java.util.*;
-class HelloWorld {
+class CheckSorted {
     /*
     Compare value with the previous one
     */

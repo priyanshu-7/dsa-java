@@ -1,5 +1,5 @@
 import java.util.*;
-class HelloWorld {
+class ReverseArray {
     /*
     Swap first and last values, keep incrementing first and decrementing last while first<last (we reach the mid array)
     */

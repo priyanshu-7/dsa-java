@@ -1,5 +1,5 @@
 import java.util.*;
-class HelloWorld {
+class SecondLargest {
     static int secondLargest(int arr[]) {
         //Idea is to keep a track of both largest and 2nd largest
         int largest = 0, res = -1;
