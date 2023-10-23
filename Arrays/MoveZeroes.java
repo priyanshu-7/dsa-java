@@ -11,6 +11,20 @@ class MoveZeroes {
     i = 2, swap(arr[i], arr[count]), count = 1
     ...
     */
+    //Better way (2023) 
+    static void MoveZeroes(int arr[]) {
+        int i = 0, j = arr.length-1;
+        while(i<=j) {
+            if(arr[i] == 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            if(arr[j] == 0) j--;
+            if(arr[i] != 0) i++;
+        }
+    }
+    
     static void moveZeroes(int arr[]) {
     int countOfNonZero = 0;
     for(int i = 0; i<arr.length; i++) {
