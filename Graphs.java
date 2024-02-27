@@ -1,5 +1,5 @@
 // "static void main" must be defined in a public class.
-public class Graphs {
+public class Main {
     public static void main(String[] args) {
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -18,6 +18,8 @@ public class Graphs {
         addEdge(adj, 1, 3);
         BFS(adj, 0);
         shortestPath(adj, 0);
+        boolean[] visited = new boolean[adj.size()];
+        DFS(adj, 0, visited);
     }
     static void addEdge(ArrayList<ArrayList<Integer>> arr, int u, int v) {
         arr.get(u).add(v);
@@ -57,6 +59,16 @@ public class Graphs {
             }
         }
         System.out.println(Arrays.toString(distance));
+    }
+    static void DFS(ArrayList<ArrayList<Integer>>adj, int source, boolean[] visited) {
+        System.out.println(source);
+        visited[source] = true;
+        for(int vertex:adj.get(source)) {
+            if(visited[vertex] == false) {
+                visited[vertex] = true;
+                DFS(adj, vertex, visited);
+            }
+        }
     }
     //For disconnected graphs, run BFS on for each source.
     /*static void bfsHelper(ArrayList<ArrayList<Integer>> adj, int source) {
